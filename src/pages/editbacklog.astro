@@ -1,0 +1,94 @@
+---
+import Layout from "../layouts/Layout.astro";
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout page="editbacklog">
+  <br />
+  <div class="container-fluid">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <i class="zmdi zmdi-plus"></i> &nbsp; EDITAR TAREA
+        </h3>
+      </div>
+      <div class="panel-body">
+        <form
+          method="post"
+          data-form="save"
+          class="local-form"
+          autocomplete="off"
+        >
+          <fieldset>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                  <div class="form-group label-floating is-empty">
+                    <label class="control-label">Tarea *</label>
+                    <input
+                      pattern=".{1,60}"
+                      class="form-control"
+                      type="text"
+                      name="tarea"
+                      id="tarea"
+                      required=""
+                      maxlength="60"
+                    />
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                  <div class="form-group label-floating is-empty">
+                    <label class="control-label">Puntos *</label>
+                    <input
+                      pattern="[0-9+]{1,15}"
+                      class="form-control"
+                      type="text"
+                      name="puntos"
+                      id="puntos"
+                      maxlength="2"
+                    />
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                  <div class="form-group label-floating">
+                    <label class="control-label">Estado</label>
+                    <select name="estado" id="estado" class="form-control">
+                      <option>Nueva</option>
+                      <option>Activa</option>
+                      <option>Impedimento</option>
+                      <option>Cerrada</option>
+                      <option>Remover</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-xs-12">
+                  <div class="form-group label-floating is-empty">
+                    <label class="control-label">Descripción *</label>
+                    <textarea
+                      name="descripcion"
+                      id="descripcion"
+                      class="form-control"
+                      rows="2"
+                      maxlength="500"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <p class="text-center" style="margin-top: 20px;">
+            <a
+              href={base + "tasklist/"}
+              class="btn btn-danger btn-raised btn-sm"
+            >
+              <i class="zmdi zmdi-arrow-left"></i> Volver
+            </a>
+            <button type="submit" class="btn btn-success btn-raised btn-sm">
+              <i class="zmdi zmdi-floppy"></i> Guardar
+            </button>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</Layout>

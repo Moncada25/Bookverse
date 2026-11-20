@@ -1,0 +1,133 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout page="bookinfo">
+  <br />
+  <!-- Panel info libro -->
+  <div class="container-fluid">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title text-center"></h3>
+      </div>
+      <div class="panel-body">
+        <fieldset>
+          <legend>
+            <i class="zmdi zmdi-library"></i> &nbsp; Información básica
+          </legend>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="form-group label-floating">
+                  <span>Título</span>
+                  <input
+                    class="form-control"
+                    data-field="titulo"
+                    value=""
+                    readonly=""
+                  />
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6">
+                <img data-cover alt="book" class="img-responsive" />
+              </div>
+              <div class="col-xs-12 col-sm-6">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div class="form-group label-floating">
+                        <span>Autor</span>
+                        <input
+                          class="form-control"
+                          data-field="autor"
+                          value=""
+                          readonly=""
+                        />
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                      <div class="form-group label-floating">
+                        <span>País</span>
+                        <input
+                          class="form-control"
+                          data-field="pais"
+                          value=""
+                          readonly=""
+                        />
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                      <div class="form-group label-floating">
+                        <span>Año</span>
+                        <input
+                          class="form-control"
+                          data-field="year"
+                          value=""
+                          readonly=""
+                        />
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                      <div class="form-group label-floating">
+                        <span>Editorial</span>
+                        <input
+                          class="form-control"
+                          data-field="editorial"
+                          value=""
+                          readonly=""
+                        />
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                      <div class="form-group label-floating">
+                        <span>Edición</span>
+                        <input
+                          class="form-control"
+                          data-field="edicion"
+                          value=""
+                          readonly=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <br />
+        <fieldset>
+          <legend>
+            <i class="zmdi zmdi-assignment-o"></i> &nbsp; Introducción al libro
+          </legend>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="form-group label-floating">
+                  <span>Introducción</span>
+                  <textarea
+                    readonly=""
+                    class="form-control"
+                    data-field="resumen"
+                    rows="3"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <br />
+        <fieldset>
+          <legend>
+            <i class="zmdi zmdi-download"></i> &nbsp; Descargar archivo PDF
+          </legend>
+          <p class="text-center">
+            <a data-download download="" class="btn btn-raised btn-info">
+              <i class="zmdi zmdi-cloud-download"></i> &nbsp; DESCARGAR PDF
+            </a>
+          </p>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,43 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout page="catalog">
+  <br />
+  <div class="container-fluid text-center">
+    <div class="btn-group">
+      <a href={base + "catalog/all/"} class="btn btn-secondary btn-raised">
+        SELECCIONE UNA CATEGORÍA
+      </a>
+      <button
+        type="button"
+        aria-label="Elegir categoría"
+        data-target="dropdown-menu"
+        class="btn btn-secondary btn-raised dropdown-toggle"
+        data-toggle="dropdown"
+      >
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu drop" style="border-radius: 15px;">
+        <li>
+          <a href={base + "catalog/all/"}>Todas</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 class="text-titles text-center">
+    Categoría seleccionada <strong>"Todas"</strong>
+  </h2>
+  <div class="container-fluid">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h3 class="panel-title text-center">LIBROS DISPONIBLES</h3>
+      </div>
+      <div class="panel-body">
+        <div id="results"></div>
+      </div>
+    </div>
+  </div>
+</Layout>

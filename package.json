@@ -1,0 +1,28 @@
+{
+  "name": "bookverse",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24.22.2 <25"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "check": "astro check",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check:security": "npm audit --audit-level=high",
+    "test": "playwright test"
+  },
+  "dependencies": {
+    "astro": "^7.4.5",
+    "idb": "^8.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^24.19.2",
+    "typescript": "~6.0.3"
+  }
+}

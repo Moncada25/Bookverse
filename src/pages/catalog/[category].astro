@@ -1,0 +1,10 @@
+---
+import Catalog from "./all/index.astro";
+export function getStaticPaths() {
+  return ["ciencia", "programacion"].map((category) => ({
+    params: { category },
+  }));
+}
+---
+
+<Catalog />
