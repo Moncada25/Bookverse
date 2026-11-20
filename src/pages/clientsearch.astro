@@ -1,0 +1,71 @@
+---
+import Layout from "../layouts/Layout.astro";
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout page="clientsearch">
+  <br />
+  <div class="container-fluid">
+    <ul class="breadcrumb breadcrumb-tabs">
+      <li>
+        <a href={base + "client/"} class="btn btn-info">
+          <i class="zmdi zmdi-plus"></i> &nbsp; NUEVO CLIENTE
+        </a>
+      </li>
+      <li>
+        <a href={base + "clientlist/"} class="btn btn-success">
+          <i class="zmdi zmdi-format-list-bulleted"></i> &nbsp; LISTA DE
+          CLIENTES
+        </a>
+      </li>
+      <li>
+        <a href={base + "clientsearch/"} class="btn btn-primary">
+          <i class="zmdi zmdi-search"></i> &nbsp; BUSCAR CLIENTE
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="container-fluid">
+    <form
+      class="well local-form"
+      method="post"
+      data-form="default"
+      autocomplete="off"
+    >
+      <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+          <div class="form-group label-floating">
+            <span class="control-label">¿A quién estás buscando?</span>
+            <input
+              class="form-control"
+              type="text"
+              name="busqueda_inicial_cliente"
+              required=""
+            />
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <p class="text-center">
+            <button type="submit" class="btn btn-primary btn-raised btn-sm">
+              <i class="zmdi zmdi-search"></i> &nbsp; Buscar
+            </button>
+          </p>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- Panel listado de busqueda de clientes -->
+  <div class="container-fluid">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <i class="zmdi zmdi-search"></i> &nbsp; RESULTADOS
+        </h3>
+      </div>
+      <div class="panel-body">
+        <div id="results"></div>
+      </div>
+    </div>
+  </div>
+</Layout>

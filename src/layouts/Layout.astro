@@ -1,0 +1,52 @@
+---
+import Nav from "../components/Nav.astro";
+import Bar from "../components/Bar.astro";
+interface Props {
+  page: string;
+}
+const { page } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const standalone = ["login", "signup", "404"].includes(page);
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="form-action 'none'; base-uri 'self'"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Bookverse, biblioteca educativa. Explora su catálogo y administra tu biblioteca de demostración local."
+    />
+    <link rel="icon" href={base + "assets/img/icon.png"} />
+    <link rel="stylesheet" href={base + "css/main.css"} />
+    <title>Bookverse</title>
+  </head>
+  <body data-page={page}>
+    {standalone ? (
+      <slot />
+    ) : (
+      <>
+        <Nav />
+        <main class="full-box dashboard-contentPage">
+          <Bar />
+          <slot />
+        </main>
+      </>
+    )}
+    <dialog id="notice">
+      <p></p>
+      <button class="btn btn-info" autofocus>
+        Cerrar
+      </button>
+    </dialog>
+    <noscript>Activa JavaScript para usar la biblioteca local.</noscript>
+    <script>
+      import "../client/app";
+    </script>
+  </body>
+</html>

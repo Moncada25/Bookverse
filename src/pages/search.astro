@@ -1,0 +1,56 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout page="search">
+  <div class="container-fluid">
+    <div class="page-header">
+      <h1 class="text-titles text-center">
+        <small>BÚSQUEDA</small>
+      </h1>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <form
+      class="well local-form"
+      method="post"
+      data-form="default"
+      autocomplete="off"
+    >
+      <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+          <div class="form-group label-floating">
+            <span class="control-label">¿Qué libro estás buscando?</span>
+            <input
+              class="form-control"
+              type="text"
+              name="busqueda_inicial_libro"
+              required=""
+            />
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <p class="text-center">
+            <button type="submit" class="btn btn-primary btn-raised btn-sm">
+              <i class="zmdi zmdi-search"></i> &nbsp; Buscar
+            </button>
+          </p>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="container-fluid">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <i class="zmdi zmdi-search"></i> &nbsp; RESULTADOS
+        </h3>
+      </div>
+      <div class="panel-body">
+        <div id="results"></div>
+      </div>
+    </div>
+  </div>
+</Layout>

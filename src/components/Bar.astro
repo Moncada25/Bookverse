@@ -1,0 +1,18 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+
+<nav class="full-box dashboard-Navbar">
+  <ul class="full-box list-unstyled text-right">
+    <li class="pull-left">
+      <a aria-label="Alternar menú" href="#!" class="btn-menu-dashboard">
+        <i class="zmdi zmdi-swap"></i>
+      </a>
+    </li>
+    <li>
+      <a href={base + "search/"} aria-label="Buscar libros" class="btn-search">
+        <i class="zmdi zmdi-search"></i>
+      </a>
+    </li>
+  </ul>
+</nav>
